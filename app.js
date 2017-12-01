@@ -6,7 +6,7 @@ var app = express();
 
 
 app.set('view engine', 'pug');
-app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, 'public')));
 // app.use(bodyParser.urlencoded({ extended: false }));
 
 var all_messages = [];
@@ -58,6 +58,6 @@ app.get('/add-articles', function(req, res){
 
 
 
-app.listen(3000, function(){
-  console.log('Server running on port 3000');
+app.listen(process.env.PORT || 3000, function(){
+  console.log('Server running on default port 3000');
 });
