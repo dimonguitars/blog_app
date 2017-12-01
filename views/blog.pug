@@ -1,0 +1,18 @@
+include includes/header.pug
+.container-fluid
+  .col-md-4
+    h2 #{title}
+
+ul
+  each post, key in messages
+    .row-post  
+      div= post.username
+       h4= post.title
+       p= post.message
+    hr
+    
+  
+  
+    
+    
+include includes/footer.pug
