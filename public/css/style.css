@@ -1,5 +1,47 @@
-.row-post {
+.list-group-item {
   background-color: #eeee;
   display:block;
   margin: 10px, 10px;
+}
+
+.row-header{
+  position: relative;
+  text-align: center;
+  width: auto;
+}
+.row-header p{
+  margin-top: 10px;
+}
+
+/*add post*/
+.msg-bg {
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #eeee;
+  width: auto;
+  border: 20px #23a746;
+  border-style: solid;
+  padding: 20px 20px;
+
+}
+
+.col-md-6{
+  position: relative;
+  width: 100%;
+}
+
+/*add post END */
+.jumbotron {
+  margin-bottom: 0px;
+
+}
+
+/*main section*/
+h2 {
+  text-align: center;
+}
+
+.main-section {
+  background-color: #24292805;
+  margin: 0;
 }

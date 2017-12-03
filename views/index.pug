@@ -1,10 +1,46 @@
 include includes/header.pug
   
-h2 #{title}
 
-
+.jumbotron
+  .row-header
+    h2 #{title}
+      p You can write and share you post across the word!
+      a.btn.btn-primary.btn-lg(href='/blog', role='button') Start now
+<!--main section -->
+.main-section
+  .my-work
+    h2 HERE IS MY WORK
+    .container
+      .row
+        .col-md-4
+          .thumbnail
+            img(src='/img/web1.png', alt='Website one')
+            .caption
+              h3 Blog App
+              p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              p
+                a.btn.btn-primary(href='#', role='button') visit website
   
   
-    
-    
+        .col-md-4
+          .thumbnail
+            img(src='/img/web2.png', alt='Website Two')
+            .caption
+              h3 Project 2
+              p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              p
+                a.btn.btn-primary(href='#', role='button') visit website
+  
+  
+        .col-md-4
+          .thumbnail
+            img(src='/img/web3.png', alt='Website Three')
+            .caption
+              h3 Project 3
+              p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              p
+                a.btn.btn-primary(href='#', role='button') visit website
+            
+  h2 More is coming -)
+
 include includes/footer.pug

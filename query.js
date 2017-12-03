@@ -1,6 +1,6 @@
 var pg = require('pg');
 var parseConnectionString = require('pg-connection-string');
-const connectionString = 'postgres://cbfdytvvwtljvn:6e0405d9247888f1c2e02f2d6b5f07f70495e194370884174fe0b25587ef0749@ec2-184-73-206-155.compute-1.amazonaws.com:5432/d6ec8odvjj04u';
+const connectionString = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/blogpost';
 const pool = new pg.Pool(typeof connectionString === 'string' ? parseConnectionString.parse(connectionString) : connectionString);
 //export the adapter function
 module.exports = function(queryString, queryParameters, onComplete) {

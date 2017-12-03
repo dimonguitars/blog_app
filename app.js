@@ -7,7 +7,7 @@ var app = express();
 
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 var all_messages = [];
 function get_all_messages(){
@@ -30,28 +30,30 @@ app.get('/', function(req, res){
 });
 
 //articles route
-app.get('/articles', function(req, res){
-  res.render('articles',{
-   title: 'Write a post'
-  });
-});
+// app.get('/articles', function(req, res){
+//   res.render('articles',{
+//    title: 'Write a post',
+//    messages: all_messages,
+//   });
+// });
 
 //blog page with all messages
 app.get('/blog', function(req, res){
   get_all_messages().then(function(all_messages){
     all_messages = all_messages.reverse();
-    res.render('blog',{
-     title: 'Post from users :',
+    res.render('articles',{
+     title: 'Write a post:',
      messages: all_messages,
+     username: 'Author:'
     });
+  res.refresh('/blog');
   })
   });
 
 
 // adding new post
-app.get('/add-articles', function(req, res){
-  query(`insert into posts (username, title, message) values ('${req.query.username}', '${req.query.title}', '${req.query.message}')`)
-
+app.post('/add-articles', function(req, res){
+  query(`insert into posts (username, title, message) values ('${req.body.username}', '${req.body.title}', '${req.body.message}')`)
   res.redirect('/blog');
 });
 
